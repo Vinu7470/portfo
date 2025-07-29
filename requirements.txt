@@ -41,3 +41,8 @@ yarl==1.18.3
 yfinance==0.2.40
 prophet==1.1.7
 fbprophet==0.7.1
+streamlit
+yfinance
+prophet==1.1.5
+numpy<2.0
+pandas
