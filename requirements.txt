@@ -43,7 +43,6 @@ prophet==1.1.7
 fbprophet==0.7.1
 streamlit
 yfinance
-prophet==1.1.5
 numpy<2.0
 pandas
 np.float64
