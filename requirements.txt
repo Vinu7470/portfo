@@ -46,7 +46,6 @@ yfinance
 prophet==1.1.5
 numpy<2.0
 pandas
-upgrade pip 25.1.1
 np.float64
 markdown-it-py>=3.0.0
 mdurl>=0.1.2
