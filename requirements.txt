@@ -53,4 +53,3 @@ rich>=14.1.0
 cmdstanpy>=1.0.8
 Streamlit>=1.47.1
 plotly
-pip install --upgrade pip
