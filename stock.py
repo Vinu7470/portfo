@@ -76,33 +76,3 @@ df_train['ds'] = pd.to_datetime(df_train['ds'], errors='coerce')
 df_train['y'] = pd.to_numeric(df_train['y'], errors='coerce')
 
 # Drop rows with NaN values
-df_train = df_train.dropna()
-
-# Check if enough data is available
-if len(df_train) < 2:
-    st.error("Not enough valid data to train the model. Please select a different stock or check the data.")
-    st.stop()
-
-# Predict forecast with Prophet
-try:
-    m = Prophet()
-    m.fit(df_train)
-    future = m.make_future_dataframe(periods=period)
-    forecast = m.predict(future)
-
-    # Display forecast data
-    st.subheader('Forecast data')
-    st.write(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail())
-
-    # Plot forecast
-    st.write(f'Forecast plot for {n_years} years')
-    fig1 = plot_plotly(m, forecast)
-    st.plotly_chart(fig1)
-
-    # Plot forecast components
-    st.subheader('Forecast components')
-    fig2 = m.plot_components(forecast)
-    st.pyplot(fig2)
-
-except Exception as e:
-    st.error(f"Error during forecasting: {str(e)}")
