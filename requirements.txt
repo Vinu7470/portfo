@@ -45,7 +45,6 @@ streamlit
 yfinance
 numpy<2.0
 pandas
-np.float64
 markdown-it-py>=3.0.0
 mdurl>=0.1.2
 pygments>=2.19.2
